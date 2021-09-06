@@ -1,0 +1,27 @@
+{
+  "name": "evaluate-articles-with-nlp",
+  "version": "1.0.0",
+  "description": "a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites by submitting a URL of an article using meaningcloud API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdumamdouh/Evaluate-Articles-with-NLP.git"
+  },
+  "keywords": [
+    "NLP"
+  ],
+  "author": "Abdulrahman Mamdouh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdumamdouh/Evaluate-Articles-with-NLP/issues"
+  },
+  "homepage": "https://github.com/abdumamdouh/Evaluate-Articles-with-NLP#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.4",
+    "babel-loader": "^8.2.2"
+  }
+}
