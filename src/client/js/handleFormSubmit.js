@@ -1,6 +1,6 @@
 import checkURL from "./checkURL";
 
-const handleFormSubmit = (e) => {
+const handleFormSubmit = async (e) => {
   e.preventDefault();
   // get the url input node
   const urlInputElment = document.getElementById("url-text");
@@ -16,11 +16,6 @@ const handleFormSubmit = (e) => {
       loggerNode.style.visibility = "visible";
       submitBtnNode.disabled = true;
       loggerNode.innerText = "Working...";
-    } catch (err) {
-      submitBtnNode.disabled = false;
-      console.log(err.message);
-      logger.style.visibility = "visible";
-      logger.innerText = "Error...";
 
       // fetech request to the backend
       const fetchAPI = await fetch(`http://localhost:8081/scan/${formText}`);
@@ -37,6 +32,11 @@ const handleFormSubmit = (e) => {
       loggerNode.style.visibility = "hidden";
       document.getElementById("sentiment-table").style.visibility = "visible";
       submitBtnNode.disabled = false;
+    } catch (err) {
+      submitBtnNode.disabled = false;
+      console.log(err.message);
+      logger.style.visibility = "visible";
+      logger.innerText = "Error...";
     }
   } else {
     alert("Invalid URL, please make sure you are entering a valid URL.");
