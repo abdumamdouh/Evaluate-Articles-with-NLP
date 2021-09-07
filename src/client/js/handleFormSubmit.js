@@ -34,11 +34,11 @@ async function handleFormSubmit(e) {
         APIResponse.irony.toLowerCase();
 
       loggerNode.style.visibility = "hidden";
-      document.getElementById("sentiment-table").style.visibility = "visible";
+      document.getElementById("sent-table").style.visibility = "visible";
       submitBtnNode.disabled = false;
     } catch (err) {
       submitBtnNode.disabled = false;
-      console.log(err.message);
+      // console.log(err.message);
       loggerNode.style.visibility = "visible";
       loggerNode.innerText = "Error...";
     }
