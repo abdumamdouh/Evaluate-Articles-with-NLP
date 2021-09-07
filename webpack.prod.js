@@ -17,6 +17,10 @@ module.exports = {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: "file-loader?name=./assets/images/[name].[ext]",
+      },
     ],
   },
   plugins: [

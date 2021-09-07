@@ -2,38 +2,66 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
+    <link
+      rel="icon"
+      href="assets/images/favicon.png"
+      type="image/png"
+      sizes="16x16"
+    />
     <title>Evaluate Articles</title>
   </head>
-
   <body>
-    <main>
-      <div class="container">
-        <p>Enter a URL of an article / a blog to discover its sentiment.</p>
-        <section>
-          <form id="form">
-            <label for="article-url">URL</label>
-            <input
-              id="article-url"
-              type="text"
-              name="input"
-              value=""
-              placeholder="Enter Article URL here"
-            />
-            <button type="submit" class="btn-submit">Submit</button>
-          </form>
-        </section>
-
-        <section>
-          <strong>Form Results:</strong>
-          <div id="text"></div>
-          <div id="agreement"></div>
-          <div id="subjectivity"></div>
-          <div id="confidence"></div>
-          <div id="irony"></div>
-          <div id="score_tag"></div>
-        </section>
+    <header>
+      <div class="app-head">
+        <img src="assets/images/logo.png" alt="logo" />
       </div>
+    </header>
+    <main>
+      <section>
+        <form>
+          <img id="robot" src="assets/images/robot.gif" alt="robot" />
+          <input id="url" type="text" name="input" value="" placeholder="URL" />
+          <input
+            id="submitBtn"
+            type="submit"
+            name=""
+            value="Submit Link"
+            onclick="return Client.handleSubmit(event)"
+          />
+        </form>
+      </section>
+      <section>
+        <strong>Neural Network Analysis Report:</strong>
+        <div id="results">
+          <p id="logger">Waiting for input...</p>
+          <table id="sentiment-table">
+            <tr>
+              <td>Sentiment</td>
+              <td>Result</td>
+            </tr>
+            <tr>
+              <td>Agreement:</td>
+              <td id="td-agreement"></td>
+            </tr>
+            <tr>
+              <td>Subjectivity:</td>
+              <td id="td-subjectivity"></td>
+            </tr>
+            <tr>
+              <td>Confidence:</td>
+              <td id="td-confidence"></td>
+            </tr>
+            <tr>
+              <td>Irony:</td>
+              <td id="td-irony"></td>
+            </tr>
+          </table>
+        </div>
+      </section>
     </main>
+    <footer>
+      <p>Cloud Mind Is Powered By MeaningCloud™</p>
+    </footer>
     <script>
       // Check that service workers are supported
       if ("serviceWorker" in navigator) {

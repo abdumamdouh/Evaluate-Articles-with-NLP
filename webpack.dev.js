@@ -10,13 +10,17 @@ module.expoerts = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: "/.js$/",
         exclude: /node_modules/,
         loader: "babel-loader",
       },
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: "file-loader?name=./assets/images/[name].[ext]",
       },
     ],
   },
@@ -33,4 +37,7 @@ module.expoerts = {
     }),
     new WorkboxPlugin.GenerateSW(),
   ],
+  resolve: {
+    extensions: [".ts", ".js"],
+  },
 };

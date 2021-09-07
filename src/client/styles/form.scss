@@ -1,0 +1,49 @@
+form {
+  background: RGBA(255, 255, 255, 0.4);
+  border: 2px solid lightgray;
+  border-radius: 17px;
+  padding: 20px 40px 20px 40px;
+  text-align: center;
+  box-shadow: 0 6px 20px -14px RGB(0 0 0);
+}
+
+#submitBtn:hover {
+  background: #d8d8d8;
+}
+
+input {
+  border: 2px solid silver;
+  border-radius: 7px;
+  padding: 5px 20px;
+  width: 100%;
+  line-height: 16px;
+  margin: 10px 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+#results {
+  padding-top: 20px;
+}
+
+#results table {
+  background: RGBA(255, 255, 255, 0.4);
+  border: 1px solid silver;
+  margin: auto;
+}
+
+#results td {
+  padding: 11px 135px 10px 5px;
+  border: 1px solid silver;
+}
+
+#results table td:nth-child(1) {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#sentiment-table {
+  visibility: hidden;
+}

@@ -10,3 +10,5 @@
  *      no
  *          show user message it's not valid URL
  */
+
+console.log("hi");
