@@ -18,7 +18,7 @@ async function handleFormSubmit(e) {
       loggerNode.innerText = "Working...";
 
       // fetech request to the backend
-      const fetchAPI = await fetch(`http://localhost:8081/scan/${formText}`);
+      const fetchAPI = await fetch(`http://localhost:8081/analysis/${URL}`);
       const APIResponse = await fetchAPI.json();
       // add the results into the dom nodes
       document.getElementById("agreement").innerHTML =
