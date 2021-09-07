@@ -15,10 +15,23 @@ const express = require("express");
 
 const app = express();
 
+// static folder
+app.use(express.static("dist"));
+// cors
+const cors = require("cors");
+app.use(cors());
+
+// import axios
+
+const axios = require("axios");
+
+// select the port for the server
 const PORT = 8081;
 
+// API endpoint
+
 app.listen(PORT, (err) => {
-  if (errr) {
+  if (err) {
     throw new Error("err");
   } else {
     console.log(`server is rinning on port ${PORT}`);
