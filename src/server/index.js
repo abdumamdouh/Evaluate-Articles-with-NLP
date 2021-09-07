@@ -5,7 +5,7 @@ const API_KEY_CREDENTIALS = process.env.API_KEY;
 
 console.log(`Your API key Credentials is ${API_KEY_CREDENTIALS}`);
 
-const mockAPIResponse = require("./mockAPI.js");
+// const mockAPIResponse = require("./mockAPI.js");
 
 //import express library
 
@@ -23,7 +23,10 @@ app.use(cors());
 
 // import axios library
 
-const axios = require("axios");
+const axios = require("axios").default;
+
+// require fetch
+// const fetch = require("node-fetch");
 
 // select the port for the server
 const PORT_NUMBER = 8081;
@@ -37,14 +40,20 @@ app.get("/", (request, response) => {
 app.get("/analysis/*", async (request, response) => {
   try {
     const url = request.params[0];
+    console.log("url:::", url);
     // meaningcloud API URL var
     const API_URL_LINK = "https://api.meaningcloud.com/sentiment-2.1";
     // http get req to the API endpoint
-    const apiResponse = await axios.get(
-      `${API_URL_LINK}?key=${API_KEY_CREDENTIALS}&url=${url}&lang=en`
-    );
+    // console.log("url form back", url);
+    const urlToBeFetched = `${API_URL_LINK}?key=${API_KEY_CREDENTIALS}&url=${url}&lang=en`;
+    console.log("urlToBeFetched", urlToBeFetched);
+    const apiResponse = await axios({
+      url: urlToBeFetched,
+      method: "get",
+    });
     // get the api response and send it back tp the frontend
     const { agreement, subjectivity, confidence, irony } = apiResponse.data;
+    // console.log(apiResponse.data);
     response.send({ agreement, subjectivity, confidence, irony });
   } catch (error) {
     console.log(error);
