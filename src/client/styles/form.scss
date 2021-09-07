@@ -18,32 +18,32 @@ input {
   width: 100%;
   line-height: 16px;
   margin: 10px 0;
+
+  &:focus {
+    outline: none;
+  }
 }
 
-input:focus {
-  outline: none;
-}
-
-#results {
+#res {
   padding-top: 20px;
+
+  table {
+    background: RGBA(255, 255, 255, 0.4);
+    border: 1px solid silver;
+    margin: auto;
+  }
+
+  td {
+    padding: 11px 135px 10px 5px;
+    border: 1px solid silver;
+
+    &:nth-child(1) {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
 }
 
-#results table {
-  background: RGBA(255, 255, 255, 0.4);
-  border: 1px solid silver;
-  margin: auto;
-}
-
-#results td {
-  padding: 11px 135px 10px 5px;
-  border: 1px solid silver;
-}
-
-#results table td:nth-child(1) {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-#sentiment-table {
+#sent-table {
   visibility: hidden;
 }

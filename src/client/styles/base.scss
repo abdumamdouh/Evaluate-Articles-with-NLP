@@ -6,13 +6,12 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-}
+  main {
+    flex: 2;
+  }
 
-main {
-  flex: 2;
-}
-
-section {
-  max-width: 800px;
-  margin: 35px auto;
+  section {
+    max-width: 800px;
+    margin: 35px auto;
+  }
 }
