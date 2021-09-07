@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-pkugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
@@ -13,7 +15,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
   },
@@ -25,4 +27,7 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: "[name].[contenthash].css" }),
     new WorkboxPlugin.GenerateSW(),
   ],
+  optimization: {
+    minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+  },
 };

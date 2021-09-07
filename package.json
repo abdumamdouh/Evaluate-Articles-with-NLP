@@ -25,9 +25,12 @@
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.2.2",
     "node-sass": "^6.0.1",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
+    "terser-webpack-plugin": "^5.2.3",
     "webpack-html-plugin": "^0.1.1",
     "workbox-webpack-plugin": "^6.2.4"
   },
