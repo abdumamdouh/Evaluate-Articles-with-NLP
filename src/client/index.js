@@ -1,7 +1,5 @@
-// TODO: include your scss file here
+import handleFormSubmit from "./js/handleFormSubmit";
 
-// TODO: get the button for submit
-// TODO: add event listener to it when the click to call handleSubmit function
 /**
  * TODO: Get Value of the input for URL
  *  TODO: Check if it's URL or not
@@ -20,4 +18,8 @@ import "./images/logo.png";
 import "./images/robot.gif";
 import "./images/favicon.png";
 
-console.log("hi");
+document
+  .getElementById("main-form")
+  .addEventListener("submit", (e) => handleFormSubmit(e));
+
+console.log("hhi");
