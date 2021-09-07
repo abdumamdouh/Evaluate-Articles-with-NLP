@@ -1,6 +1,6 @@
 import checkURL from "./checkURL";
 
-const handleFormSubmit = async (e) => {
+async function handleFormSubmit(e) {
   e.preventDefault();
   // get the url input node
   const urlInputElment = document.getElementById("url-text");
@@ -43,6 +43,6 @@ const handleFormSubmit = async (e) => {
     logger.innerText =
       "Invalid URL, please try a working URL, ex: https://flaviocopes.com/npm-peer-dependencies/";
   }
-};
+}
 
 export default handleFormSubmit;
