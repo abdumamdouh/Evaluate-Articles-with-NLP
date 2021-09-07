@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      href="assets/images/favicon.png"
+      type="image/png"
+      sizes="16x16"
+    />
+    <title>Evaluate Articles</title>
+  <link href="main.549ef8671e6b3fe9a286.css" rel="stylesheet"></head>
+  <body>
+    <header>
+      <div class="head">
+        <img src="assets/images/logo.png" alt="logo" />
+      </div>
+    </header>
+    <main>
+      <section>
+        <form id="main-form">
+          <img id="robot" src="assets/images/robot.gif" alt="robot" />
+          <input
+            id="url-text"
+            type="text"
+            name="input"
+            value=""
+            placeholder="URL"
+          />
+          <input id="submitBtn" type="submit" name="" value="Submit Link" />
+        </form>
+      </section>
+      <section>
+        <strong>Neural Network Analysis Report:</strong>
+        <div id="res">
+          <p id="loggerSection">Waiting for input...</p>
+          <table id="sent-table">
+            <tr>
+              <td>Sentiment</td>
+              <td>Result</td>
+            </tr>
+            <tr>
+              <td>Agreement:</td>
+              <td id="agreement"></td>
+            </tr>
+            <tr>
+              <td>Subjectivity:</td>
+              <td id="subjectivity"></td>
+            </tr>
+            <tr>
+              <td>Confidence:</td>
+              <td id="confidence"></td>
+            </tr>
+            <tr>
+              <td>Irony:</td>
+              <td id="irony"></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Cloud Mind Is Powered By MeaningCloud™</p>
+    </footer>
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
+  <script type="text/javascript" src="main.6bbebaccc5836f4a1b17.js"></script></body>
+</html>

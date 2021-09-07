@@ -91,7 +91,6 @@ npm run test
 |   |
 |   \---server
 |           index.js
-|           mockAPI.js
 |
 \---_test_
         testhandleFormSubmit.test.js
