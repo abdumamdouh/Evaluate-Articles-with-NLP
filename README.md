@@ -117,7 +117,12 @@ Configure environment variables using dotenv package:
    npm install dotenv
 ```
 
-API_KEY=****\*\*****\*\*\*\*****\*\*****
+-Create a new `.env` file in the root of your project
+-Fill the `.env` file with your API key like this:
+
+```Batchfile
+API_KEY=\***\*\*\*\*\***\*\*\*\*\***\*\*\*\*\***
+```
 
 You can get the project up and running in 3 simple steps.
 
